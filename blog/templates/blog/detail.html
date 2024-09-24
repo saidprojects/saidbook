@@ -1,0 +1,52 @@
+<!-- blog/templates/blog/detail.html -->
+{% extends "base.html" %}
+{% block page_title %}
+    <h2>{{ post.title }}</h2>
+{% endblock page_title %}
+{% block page_content %}
+    <p class="post_snippet">{{ post.body |safe }}</p>
+    <small>
+        {{ post.created_on }} | категория:
+        {% for category in post.categories.all %}
+            <a href="{% url 'blog_category' category.name %}">
+                {{ category.name }}
+            </a>
+        {% endfor %}
+    </small>
+    <h3>Оставить коментарий:</h3>
+    <div class="comment_form_container">
+        <form class="form_comment" method="post">
+            {% csrf_token %}
+            <div>
+                {{ form.author }}
+            </div>
+            <div>
+                {{ form.body }}
+            </div>
+            <button type="submit" class="btn btn-primary">Комментировать</button>
+        </form>
+    </div>
+
+    
+    <h3 class="">Комментарии:</h3>
+    {% for comment in comments %}
+    <small>
+    <div class="comment_container">
+        <p class="comment_author">
+            @{{ comment.author }}:
+            </p>
+        <p class="comment_text">
+         {{ comment.body }}
+        </p>
+
+        
+
+        <p class="comment_date">
+        On {{ comment.created_on }} 
+        </p>
+        
+    </div>
+    </small>
+    {% endfor %}
+    <pre><code class="language-python">{{ article.code }}</code></pre>
+{% endblock page_content %}

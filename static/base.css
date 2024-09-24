@@ -1,0 +1,250 @@
+
+:root, ::backdrop {
+    /* Определение переменных для глобального использования */
+    --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif; /* Шрифты без засечек */
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* Шрифты с фиксированной шириной */
+    --standard-border-radius: 5px; /* Стандартный радиус границ */
+    --bg: #fff; /* Цвет фона (белый) */
+    --accent-bg: rgb(181, 181, 181); /* Цвет акцентного фона */
+    --text: #212121; /* Основной цвет текста */
+    --text-light: #585858; /* Светлый цвет текста */
+    --border: #898ea4; /* Цвет границы */
+    --accent: #0d47a1; /* Основной акцентный цвет */
+    --accent-hover: #1266e2; /* Цвет при наведении на акцентные элементы */
+    --accent-text: var(--bg); /* Цвет текста на акцентном фоне */
+    --code: #d81b60; /* Цвет кода */
+    --preformatted: white; /* Цвет для предформатированного текста */
+    --marked: green; /* Цвет для выделенного текста */
+    --disabled: #efefef; /* Цвет для неактивных элементов */
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Адаптация стилей для темной темы */
+    :root, ::backdrop {
+        color-scheme: dark; /* Указывает, что документ поддерживает темный режим */
+        --bg: #212121; /* Цвет фона (темный) */
+        --accent-bg: rgb(19, 19, 19); /* Цвет акцентного фона (темный) */
+        --text: #dcdcdc; /* Цвет текста (светлый) */
+        --text-light: #ababab; /* Светлый цвет текста (еще светлее) */
+        --accent: rgb(84, 84, 84); /* Темный акцентный цвет */
+        --accent-hover: #ffe099; /* Цвет при наведении на акцентные элементы (в светлом варианте) */
+        --code: #f06292; /* Цвет для кода (светлый) */
+        --preformatted: #ccc; /* Цвет для предформатированного текста (темный) */
+        --disabled: #111; /* Цвет для неактивных элементов (темный) */
+    }
+
+    img, video {
+        opacity: .8; /* Уменьшение непрозрачности изображений и видео для лучшего контраста */
+    }
+}
+
+html {
+    font-family: var(--sans-font); /* Установка шрифта для HTML-корня */
+    scroll-behavior: smooth; /* Плавная прокрутка при переходах на якоря */
+}
+
+body {
+    /* Основные стили для тела документа */
+    font-family: serif; /* Шрифт с засечками для всего тела */
+    background: linear-gradient(to right, orange , black , black,
+    black, black, black, black, black, black, black, black,
+    black, black, black, black, black, black, black, black, black,
+    black, black, black, black, black, black, black, black, black,
+    black, black, black, black, black, black, black, black, black,
+    black, black, black, black, black, black, black, black, black,
+    black, black, black, black, black, black, black, black, black,
+    orange); /* Градиентный фон (переход от оранжевого к черному) */
+    line-height: 1.5; /* Высота строки, улучшает читабельность */
+    padding-bottom: 50px; /* Отступ внизу страницы */
+    padding: 0 10px; /* Горизонтальные отступы */
+    color: whitesmoke; /* Цвет текста (светло-серый) */
+    display: grid; /* Использование grid-расположения для элементов */
+    grid-template-columns: 1fr min(45rem, 90%) 1fr; /* Определение колонок для страницы */
+}
+
+body  * {
+    grid-column: 2; /* Все прямые дочерние элементы будут занимать среднюю колонку */
+}
+
+body>header {
+    background-color: var(--accent-bg);
+    border-bottom: 5px solid orange;
+    border-color: orange;
+    text-align: center;
+    grid-column: 1/-1;
+    padding: 0 .5rem 2rem
+}
+
+
+
+/* Стиль заголовков */
+h1, h2, h4, h5, h6 {
+    margin-bottom: 1px; /* Отступ снизу для заголовков */
+    color: #f8b628; /* Цвет заголовков */
+    font-size: 4vh; /* Размер шрифта в соответствии с высотой окна */
+}
+
+h2 {
+    color: red; /* Цвет второго уровня заголовка */
+    text-align: center; /* Центрирование текста второго заголовка */
+}
+
+.title {
+    font-family: cursive; /* Курсивный шрифт для заголовков меню и титулов */
+    text-align: center; /* Центрирование текста */
+}
+
+.title {
+    font-size: 5vh; /* Размер шрифта для титула */
+    color: orange; /* Цвет титула */
+}
+
+/* Параграфы */
+p {
+    margin-bottom: 1px; /* Отступ снизу для параграфов */
+    color: white; /* Цвет текста параграфов */
+    font-size: 3vh; /* Размер шрифта для параграфов */
+    font-family: 'Times New Roman', Times, serif; /* Шрифт для параграфов */
+    display: flex; /* Использование flex-расположения для параграфов */
+    flex-wrap: wrap; /* Перенос текста на новую строку */
+    justify-content: center; /* Центрирование содержимого */
+}
+
+code, pre, pre span, kbd, samp {
+    font-family: var(--mono-font); /* Шрифт для кода */
+    color: var(--code); /* Цвет для кода */
+}
+
+
+.comment {
+    font-size: 2vh; /* Размер шрифта для комментариев */
+}
+
+.comments {
+    font-size: 3vh; /* Размер шрифта для списка комментариев */
+}
+
+/* Стиль для кнопки "Читать далее" */
+.read_more {
+    color: #007bff; /* Цвет текста при обычном состоянии */
+    cursor: pointer; /* Курсор-при наведении */
+    padding: 3px; /* Отступы вокруг текста */
+    transition: background-color 0.5s; /* Плавный переход цвета фона */
+    display: flex; /* Flex для адаптации кнопки */
+    justify-content: right; /* Выравнивание вправо */
+    margin-left: 300px; /* Отступ слева */
+}
+
+.read_more:hover {
+    color: greenyellow; /* Цвет текста кнопки при наведении */
+}
+
+/* Стили для меню сайта */
+header > nav ul, header > nav ol {
+    flex-flow: wrap; /* Элементы оборачиваются */
+    place-content: space-around center; /* Выравнивание содержимого */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем отступы */
+    list-style-type: none; /* Убираем маркеры списка */
+    display: flex; /* Flex для навигации */
+}
+
+header > nav ul li, header > nav ol li {
+    display: inline-block; /* Элементы расположены в одну линию */
+}
+
+.menu {
+    display: inline-block; /* Класс для меню по горизонтали */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.ul_1, .ul_2 {
+    list-style: none; /* Убираем маркеры */
+    padding: 5px; /* Отступы для списка */
+    display: flex; /* Flex для списка */
+    flex-direction: row; /* Горизонтальное направление для списка */
+    justify-content: center; /* Центрирование элементов */
+    align-items: center; /* Вертикальное центрирование */
+}
+
+.menu_item {
+    color: white; /* Цвет для элементов меню */
+    transition: color 0.3s, background-color 0.3s; /* Плавные переходы цвета */
+    cursor: pointer; /* Курсор-при наведении на элемент меню */
+    border: 1px solid orange; /* Граница элементов меню */
+    padding: 5px 10px; /* Отступы внутренних элементов меню */
+    margin: 10px; /* Расстояние между элементами */
+    border-radius: 8px; /* Скругление углов меню */
+    text-decoration: none;
+}
+
+.menu_item:hover {
+    background-color: orange; /* Цвет фона при наведении */
+    color: black; /* Цвет текста при наведении */
+    transform: translateY(-4px); /* Подъем элемента при наведении */
+    font-family: cursive; /* Изменение шрифта при наведении */
+}
+
+.menu_item:active {
+    transform: translateY(2px); /* Смещение элемента при нажатии */
+    box-shadow: none; /* Убираем тень при нажатии */
+}
+
+/* Комментарии */
+.comment_container {
+    background-color: whitesmoke; /* Цвет фона для блока комментариев */
+    border: 1px solid #eee; /* Светлая граница */
+    border-radius: 10px; /* Скругленные углы */
+    padding-left: 10px; /* Отступ слева */
+    margin-bottom: 10px; /* Отступ снизу */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для контейнера комментариев */
+}
+
+.comment_author {
+    font-weight: bold; /* Жирный шрифт для имени автора комментария */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333; /* Цвет имени автора */
+}
+
+.comment_text {
+    padding: 0; /* Убираем отступы */
+    line-height: 1.6; /* Высота строки для текста комментария */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: black; /* Цвет текста комментария */
+}
+
+.comment_date {
+    color: black; /* Цвет даты комментария */
+    font-size: 0.8em; /* Размер шрифта для даты комментария */
+}
+
+/* Кнопка "комментировать" */
+button {
+    display: inline-block; /* Отображение в одном исполнении */
+    padding: 10px; /* Отступы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание для текста */
+    border-radius: 10px; /* Скругление углов кнопки */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Цвет фоновой кнопки при наведении */
+}
+
+/* Стиль для горизонтальной линии */
+.main_hr {
+    color: orange; /* Цвет линии */
+    height: 4px; /* Высота линии */
+    background-color: orange; /* Фоновый цвет линии */
+    grid-column: span 3; /* Изменение ширины линии на 3 колонки */
+    position: relative; /* Относительное позиционирование */
+    z-index: 1; /* Обеспечивает, чтобы линия находилась поверх других элементов */
+}
+
+
+
+
+

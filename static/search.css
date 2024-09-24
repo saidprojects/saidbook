@@ -1,0 +1,80 @@
+/* Стили для поисковой формы */
+.search_form {
+    display: flex; /* Flex для формы */
+    align-items: center; /* Вертикальное центрирование */
+    max-width: 500px; /* Максимальная ширина формы */
+    margin: 10px auto; /* Автоматика слева и справа для центрирования */
+    border-radius: 15px; /* Скругленные углы */
+    overflow: hidden; /* Убираем выливание за пределы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для формы */
+    width: 100%; /* Полная ширина */
+}
+
+.form_control {
+    padding: 5px; /* Отступы для поля ввода */
+    border: 1px solid white; /* Белая граница */
+    border-radius: 20px; /* Скругленные углы для поля */
+    outline: none; /* Убираем рамку при фокусировке */
+    width: 100%; /* Полная ширина поля */
+    font-size: 14px; /* Размер шрифта для поля */
+}
+
+.form_control ::placeholder {
+    color: #999; /* Цвет текста плейсхолдера */
+}
+
+.form_search_container {
+    display: flex; /* Flex для контейнера поиска */
+    justify-content: center; /* Центрирование содержимого */
+    width: 100%; /* Полная ширина контейнера */
+}
+
+.posts_container {
+    display: flex; /* Flex для контейнера постов */
+    flex-direction: column; /* Вертикальное направление */
+    align-items: center; /* Центрирование содержимого */
+}
+
+.post_search {
+    display: grid; /* Использование flex для контейнеров публикаций и форм */
+    /* justify-content: right; Выравнивание содержимого вправо */
+    grid-column: 2;
+
+}
+
+
+/* Стили для кнопки поиска */
+.button_search {
+    background-color: #4CAF50; /* Фоновый цвет кнопки */
+    border: none; /* Убираем границу */
+    color: white; /* Цвет текста */
+    padding: 5px 10px; /* Отступы для кнопки */
+    text-align: center; /* Выровнено по центру */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* В одно исполнение */
+    font-size: 14px; /* Размер шрифта */
+    margin: 5px 2px; /* Отступы */
+    cursor: pointer; /* Курсор-при наведении на кнопку */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для кнопки */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы */
+}
+
+.button_search:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
+    transform: translateY(-2px); /* Подъем кнопки при наведении */
+    font-family: cursive; /* Изменение шрифта при наведении */
+}
+
+.button_search:active {
+    transform: translateY(2px); /* Смещение кнопки при нажатии */
+    box-shadow: none; /* Убираем тень при нажатии */
+}
+
+
+.post_title_search {
+    color: #f8b628; /* Цвет названия поста */
+    font-size: 4vh; /* Размер шрифта для названия поста */
+    padding: 0; /* Убираем отступ */
+    cursor: pointer; /* Курсор-при наведении на пост */
+}

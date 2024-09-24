@@ -1,0 +1,14 @@
+<!-- blog/templates/blog/categoty.html -->
+
+{% extends "blog/index.html" %}
+
+{% block page_title %}
+<h2>{{ category }}</h2>
+<small>
+    <style>
+        .pusto {
+            text-align: center;
+        }
+    </style>
+        <p class="pusto">{{ pusto }}</p></small>
+{% endblock page_title %}

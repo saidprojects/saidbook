@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block page_title %}
+<form class="search_form" method="get">
+    <div class="form_search_container"> 
+        {{ form.query }} 
+        <button class="button_search" type="submit">Поискать</button>
+    </div>
+</form>
+
+<div class="posts_container">
+
+{% if status == "Нет результатов" %}
+    <h2>Нет результатов</h2>
+{% endif %}
+{% block posts %}
+        {% for post in results %}
+            <h2><a class="post_title_search" href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h2>
+            <br>
+            <small class="post_search">
+                {{ post.created_on }} | категория: 
+                {% for category in post.categories.all %}
+                    <a href="{% url 'blog_category' category.name %}"> {{ category.name }}</a>
+                {% endfor %}
+            </small>
+        {% endfor %}
+    {% endblock posts %}
+{% endblock page_title %}
+</div>

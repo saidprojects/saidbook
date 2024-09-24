@@ -1,0 +1,6 @@
+.comment_form_container {
+    display: grid; /* Использование flex для контейнеров публикаций и форм */
+    /* justify-content: right; Выравнивание содержимого вправо */
+    grid-column: 2;
+
+}

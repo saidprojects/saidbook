@@ -1,0 +1,43 @@
+/*.posts_index {
+    /*text-align: center;  Центрирование текста */
+    /*height: 100vh;  Высота на всю высоту окна */
+    /*margin: 0;  Убираем отступы */
+    /*display: inline-flex;  Отображение блока */
+    /*width: 100%;  Полная ширина 
+}
+*/
+.menu_title {
+    font-family: cursive; /* Курсивный шрифт для заголовков меню и титулов */
+    text-align: center; /* Центрирование текста */
+    font-size: 5vh;
+}
+
+
+.post_snippet{
+    display: grid; /* Использование flex для контейнеров публикаций и форм */
+    /* justify-content: right; Выравнивание содержимого вправо */
+    grid-column: 1;
+
+}
+
+.post_detail {
+    display: inline-block;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.post_title {
+    color: #f8b628; /* Цвет названия поста */
+    font-size: 4vh; /* Размер шрифта для названия поста */
+    padding: 0; /* Убираем отступ */
+    cursor: pointer; /* Курсор-при наведении на пост */
+    text-decoration: none;
+    display: grid;
+    text-align: left;
+}
+
+.post_title:hover, .post_title_search:hover {
+    color: greenyellow; /* Цвет текста при наведении на посты */
+}

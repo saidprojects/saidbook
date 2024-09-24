@@ -1,0 +1,36 @@
+<!-- templates/base.html -->
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <title>Saidpium</title>
+
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'index_posts.css' %}">
+    <link rel="stylesheet" href="{% static 'search.css' %}">
+    <link rel="stylesheet" href="{% static 'comments.css' %}">
+    
+
+</head>
+<body>
+    <header>
+        <h1 class="title">saidbook</h1>
+        
+        <nav class="menu">
+            <ul class="ul_1">
+                <a class="menu_item" href="{% url 'blog_index' %}">#Последние</a>
+                <a class="menu_item" href="{% url 'blog_category' 'Твиты' %}">#Твиты</a>
+                <a class="menu_item" href="{% url 'blog_category' 'Статьи' %}">#Статьи</a>
+                <a class="menu_item" href="{% url 'blog_category' 'Python' %}">#Python</a>
+                <a class="menu_item" href="{% url 'blog_category' 'JavaScript' %}">#JavaScript</a>
+                <a class="menu_item" href="{% url 'blog_search' %}">#Поиск</a>
+            </ul>
+        </nav>
+    </header>
+    {% block page_title %} {% endblock page_title %}
+    {% block page_content %} {% endblock page_content %}
+</body>
+</html>
+
